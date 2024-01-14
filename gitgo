@@ -1,0 +1,14 @@
+#!/bin/bash
+
+parms="$*"
+trimmed=$(echo "$parms" | xargs)
+
+message="quick commit"
+
+if [ -n "$trimmed" ]; then
+    message="$trimmed"
+fi
+
+git add .
+git commit -m "${message}"
+git push
